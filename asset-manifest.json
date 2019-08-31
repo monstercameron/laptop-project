@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/laptop-project/static/css/main.2cce8147.chunk.css",
+    "main.js": "/laptop-project/static/js/main.5a08164a.chunk.js",
+    "main.js.map": "/laptop-project/static/js/main.5a08164a.chunk.js.map",
+    "runtime~main.js": "/laptop-project/static/js/runtime~main.c9001425.js",
+    "runtime~main.js.map": "/laptop-project/static/js/runtime~main.c9001425.js.map",
+    "static/js/2.1cabd16e.chunk.js": "/laptop-project/static/js/2.1cabd16e.chunk.js",
+    "static/js/2.1cabd16e.chunk.js.map": "/laptop-project/static/js/2.1cabd16e.chunk.js.map",
+    "index.html": "/laptop-project/index.html",
+    "precache-manifest.8cd25b378159b37b08417bd9ddee34c0.js": "/laptop-project/precache-manifest.8cd25b378159b37b08417bd9ddee34c0.js",
+    "service-worker.js": "/laptop-project/service-worker.js",
+    "static/css/main.2cce8147.chunk.css.map": "/laptop-project/static/css/main.2cce8147.chunk.css.map",
+    "static/media/logo.svg": "/laptop-project/static/media/logo.5d5d9eef.svg"
+  }
+}
