@@ -9,19 +9,20 @@ class ProductElem extends Component {
     keyDataList = () => {
         const dataSet = [
             {keyProp:'brand', value:'hp'},
-            {keyProp:'brand', value:'acer'}
+            {keyProp:'brand', value:'acer'},
+            {keyProp:'brand', value:'microsoft'}
         ]
         const style = {
-            backgroundColor:'rbga(0,0,0,0.25)'
+            backgroundColor:'rgba(0,0,0,0.05)'
         }
         return dataSet.map((data, index) => {
-            if (index % 2 === 0) return <KeyData key={index} keyProp={data.keyProp} value={data.value} style={style}/>
+            if (index % 2 === 0) return <KeyData key={index} keyProp={data.keyProp} value={data.value} styleProp={style}/>
             else return <KeyData key={index} keyProp={data.keyProp} value={data.value}/>
         })
     }
     render() {
         return (
-            <Row className='p-0 pb-1 m-1 border'>
+            <Row className='p-0 pb-1 m-1 border bg-white expand'>
                 <Col lg={12} className='p-1 m-0'>
                         <img src='https://via.placeholder.com/960x540' alt='' width='100%' className='img-fluid' />
                 </Col>

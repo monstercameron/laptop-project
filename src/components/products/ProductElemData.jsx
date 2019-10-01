@@ -5,7 +5,7 @@ class ProductElementData extends Component {
     render() {
         return (
             <Col lg={12}>
-                <Row className='p-0 m-0' style={this.props.style}>
+                <Row className='p-0 m-0' style={this.props.styleProp}>
                     <Col sm={3} className='border-right text-center'>{this.props.keyProp}</Col>
                     <Col sm={9} className='text-center'>{this.props.value}</Col>
                 </Row>

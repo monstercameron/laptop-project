@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Col, Row, Container, Button } from 'reactstrap'
+import { Col, Row, Container } from 'reactstrap'
 import Carousel from '../components/carousel/carousel'
 import Footer from '../components/footer/footer'
 class HomePage extends Component {

@@ -1,0 +1,16 @@
+@keyframes expand-anim {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.expand {
+    animation-name: expand-anim;
+    animation-duration: .75s;
+}
