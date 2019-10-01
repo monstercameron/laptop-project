@@ -1,68 +1,130 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Objectives
 
-## Available Scripts
+## Sitemap and rough layout
+-homepage
+--header bar component
+---site logo component
+---menu options component
+---shopping cart component
+--image slider component
+--product description component
+--accessories description component
+--product usage/feature shots
+--footer bar component
+---about us
+---contacts
+---jump to top
 
-In the project directory, you can run:
+-product
+--header bar component
+---site logo component
+---menu options component
+---shopping cart component
+--product slides
+--product information
+--add to cart
+--add accessories
+--go to checkout
+--footer bar component
+---about us
+---contacts
+---jump to top
 
-### `npm start`
+-accessories
+--header bar component
+---back button(to product)
+---menu options component
+---shopping cart component
+--accessories filter
+--list of accessories
+--accessory details
+--add to cart
+--go to checkout
+--footer bar component
+---about us
+---contacts
+---jump to top
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+-checkout
+--header
+---back button(to accessories)
+--itemized list of products
+---purchase quantity
+---remove item
+--total cost
+--ETA
+--confirmation
+--card info
+--pruchase button
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+-about/contacts
+--header bar component
+---back button(to home)
+---menu options component
+---shopping cart component
+--about component
+--contact form component
+--footer bar component
+---about us
+---contacts
+---jump to top
 
-### `npm test`
+## products
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+-laptop
+--display
+---extendible hinge (6" travel)
+---3840*1440
+---ultrawide
+---ips
+---60hz
+---removeable usb-c
+--optional displays
+---3840*1440 oled
+---3840*1440 exprimental laser display
+---2560*1080 120hz ips
+---4k*2K ePaper display
+--processor
+---amd r5 3200G
+---amd vega 8
+---12-65W cTDP
+---socketed am4
+--RAM
+---2 sodimm slots
+---ddr4 3200 support
+---32GB support
+--storage
+---4 m.2 slots
+---1 populated @ 256GB nvme x4
+--ports
+---7 usb-c
+---2 usb-a
+---1 sd express
+---1 bottom accessory port
+---1 sata
+---1 slotted accessory port
+--keyboard
+---remeveable
+---includes mechanical keyboard
+---backlit
+--trackpad
+---stylus support
+---glass surface
+---windows precision
+---fingerprint scanner
+--optional trackpads
+---eink with powered off support
+--webcam
+---windows hello
+---1080p webcam with f2 aperature and auto focus
+--optional webcam
+---4k webcam/ stereo audio/ autofocus/ f1.8 aperature/ IR camera
+--usb accesories
+---ethernet adapter
+--wireless
+---nvme intel wifi 6 w/ bt5
+---nvme 4g lte/gps
+--battery
+---interal 99WHr
+---accessory port 20Whr
+---accessory port 50Whr slice battery (stackable)

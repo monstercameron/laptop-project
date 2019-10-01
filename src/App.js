@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from "react-router-dom"
+import HomePage from './layouts/HomePage'
+import ProductList from './layouts/ProductList'
+import ProductPage from './layouts/ProductPage'
+import ProdElem from './components/products/ProductElem'
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { cart: [] }
+  }
+  addToCart = (product) => {
+    this.setState({ cart: [...this.state.cart, product] })
+  }
+  passFnsToChild = () => {
+    return {
+      addToCart:this.addToCart
+    }
+  }
+  render() {
+    console.log('state', this.state)
+    return (
+      <Router>
+      <Route exact path="/" component={() => <HomePage {...this.passFnsToChild()} />} />
+        <Route exact path="/products" component={() => <ProductList {...this.passFnsToChild()} />} />
+        <Route exact path="/products/:id" component={() => <ProductPage {...this.passFnsToChild()} content={ProdElem} />} />
+        <Route path="/about" component={() => <div>about</div>} />
+        <Route path="/topics" component={() => <div>topics</div>} />
+      </Router>
+    )
+  }
 }
-
-export default App;
+export default App
