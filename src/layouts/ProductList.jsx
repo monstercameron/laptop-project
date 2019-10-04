@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Container } from 'reactstrap'
+import { withRouter } from 'react-router-dom'
 import ProdHeader from '../components/header/ProductListHeader'
 import ProdFooter from '../components/footer/ProductListFooter'
 import ProdElem from '../components/products/ProductListElem'
@@ -9,7 +10,8 @@ class ProductList extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            currentPage: 1,
+            currentPage: parseInt(this.props.match.params.page),
+            pageCount: 105,
             products: [
                 {
                     _id: '1',
@@ -43,18 +45,21 @@ class ProductList extends Component {
             return <ProdElem key={index} {...product} />
         })
     }
+    changePage = (page) => {
+        this.props.history.push(`/products/page/${page}`)
+        this.setState({currentPage: page})
+    }
     render() {
         return (
             <>
                 <Container className=''>
                     <ProdHeader />
                     {this.listOfProducts()}
-                    <ProdPage count={this.state.products.length} />
-                    <ProdPage count={105} currentPage={this.state.currentPage} />
+                    <ProdPage count={this.state.pageCount} currentPage={this.state.currentPage} changePage={this.changePage} />
                     <ProdFooter />
                 </Container>
             </>
         )
     }
 }
-export default ProductList
+export default withRouter(ProductList)

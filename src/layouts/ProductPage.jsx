@@ -13,11 +13,7 @@ class ProductPage extends Component {
             <>
                 <Container>
                     <ProdHeader />
-                </Container>
-                <Container>
                     <this.props.content/>
-                </Container>
-                <Container>
                     <ProdFooter />
                 </Container>
             </>

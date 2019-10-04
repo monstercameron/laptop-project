@@ -21,7 +21,7 @@ class ProductListHeader extends Component {
                                     <Link to='/products'><h2 className='text-capitalize text-dark'>home</h2></Link>
                                 </Col>
                                 <Col sm={3} className='border pt-2 header-menu-option'>
-                                    <Link to='/products'><h2 className='text-capitalize text-dark'>database</h2></Link>
+                                    <Link to='/database'><h2 className='text-capitalize text-dark'>database</h2></Link>
                                 </Col>
                                 <Col sm={3} className='border pt-2 header-menu-option'>
                                     <Link to='/products'><h2 className='text-capitalize text-dark'>add device</h2></Link>

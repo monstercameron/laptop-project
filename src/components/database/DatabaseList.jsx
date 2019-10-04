@@ -164,7 +164,7 @@ class DatabaseList extends Component {
     }
     addLinksTodata = (state) => {
         return state.data.map((data, index) => {
-            data.link = <Link to={`/products/${data._id}`}><Button>Open</Button></Link>
+            data.link = <Link to={`/products/item/${data._id}`}><Button>Open</Button></Link>
             return data
         })
     }

@@ -4,7 +4,28 @@ class ProductPagination extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            pages: this.howManyPages()
+            currentPage: this.props.currentPage,
+            pages: this.howManyPages(),
+            pagination: null,
+            paginationPreview: 4,
+            updateMe: false
+        }
+    }
+    static getDerivedStateFromProps = (props, state) => {
+        if (props.currentPage !== state.currentPage) {
+            return {
+                currentPage: props.currentPage,
+                updateMe: !state.updateMe
+            }
+        }
+        return null
+    }
+    componentDidMount = () => {
+        this.setState({ pagination: this.paginator() })
+    }
+    componentDidUpdate = () => {
+        if (this.state.updateMe) {
+            this.setState({ pagination: this.paginator(), updateMe: !this.state.updateMe })
         }
     }
     howManyPages = () => {
@@ -12,28 +33,61 @@ class ProductPagination extends Component {
     }
     paginator = () => {
         let pages = []
-        if (this.props.currentPage > 0) {
-            pages.push(<Col className='text-center' key={this.props.currentPage - 1}>{'<'}</Col>)
+        // back button
+        if (this.state.currentPage > 1) {
+            pages.push(<Col onClick={this.updatePageInSteps} className='text-center' key={'previous'}>{'<'}</Col>)
         }
-        let i = this.props.currentPage || 0
-        for (; i < this.state.pages; i++) {
-            if (i > 4) {
-                pages.push(<Col className='text-center' key={i + 1}>...</Col>)
-                pages.push(<Col className='text-center' key={i + 2}>{this.state.pages}</Col>)
-                pages.push(<Col className='text-center' key={i}>></Col>)
+        // single page indicator
+        if (this.state.currentPage === 1 && this.state.pages === 1) {
+            pages.push(<Col className='text-center' key={'only'}>1</Col>)
+        }
+        // multipage indicator
+        let paginationPreview = 0
+        let startingPagination = this.state.currentPage
+        if (Math.abs(this.state.pages - this.state.currentPage < this.state.paginationPreview)) {
+            startingPagination = this.state.pages - this.state.paginationPreview + 1
+        }
+        for (let index = startingPagination; index <= this.state.pages; index++ , ++paginationPreview) {
+            if (paginationPreview >= this.state.paginationPreview) {
                 break
             }
-            pages.push(<Col className={`text-center ${i === this.props.currentPage ? 'border' : ''}`} key={i}>{i + 1}</Col>)
+            if (index === this.state.currentPage) {
+                pages.push(<Col onClick={this.updatePage} className={`text-center bg-dark text-white`} key={index}>{index}</Col>)
+            } else {
+                pages.push(<Col onClick={this.updatePage} className='text-center' key={index}>{index}</Col>)
+            }
         }
+        // last and next page options
+        if (Math.abs(this.state.pages - this.state.currentPage) > this.state.paginationPreview) {
+            pages.push(<Col className='text-center' key={'span'}>...</Col>)
+            pages.push(<Col onClick={this.updatePage} className='text-center' key={'last'}>{this.state.pages}</Col>)
+            pages.push(<Col onClick={this.updatePageInSteps} className='text-center' key={'next'}>></Col>)
+        }
+        // this.setState({ pagination: pages })
         return pages
     }
+    updatePage = (e) => {
+        if (this.props.currentPage !== parseInt(e.target.innerHTML)) {
+            this.props.changePage(parseInt(e.target.innerHTML))
+        }
+    }
+    updatePageInSteps = (e) => {
+        switch (e.target.innerHTML) {
+            case '&gt;':
+            case '>': this.props.changePage(this.props.currentPage + 1)
+                break
+            case '&lt;':
+            case '<': this.props.changePage(this.props.currentPage - 1)
+                break
+            default: return
+        }
+    }
     render() {
-        console.log(this.props)
         return (
             <Row className='p-0 m-1 mt-2 border bg-white shadow'>
                 <Col sm={6} className='mx-auto border'>
                     <Row>
-                        {this.paginator()}
+                        {this.state.pagination}
                     </Row>
                 </Col>
             </Row>
