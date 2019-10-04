@@ -18,9 +18,9 @@ class ProductPagination extends Component {
         let i = this.props.currentPage || 0
         for (; i < this.state.pages; i++) {
             if (i > 4) {
-                pages.push(<Col className='text-center' key={i}>></Col>)
                 pages.push(<Col className='text-center' key={i + 1}>...</Col>)
                 pages.push(<Col className='text-center' key={i + 2}>{this.state.pages}</Col>)
+                pages.push(<Col className='text-center' key={i}>></Col>)
                 break
             }
             pages.push(<Col className={`text-center ${i === this.props.currentPage ? 'border' : ''}`} key={i}>{i + 1}</Col>)

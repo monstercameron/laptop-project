@@ -4,6 +4,7 @@ import HomePage from './layouts/HomePage'
 import ProductList from './layouts/ProductList'
 import ProductPage from './layouts/ProductPage'
 import ProdElem from './components/products/ProductElem'
+import DBList from './components/database/DatabaseList'
 class App extends Component {
   constructor(props) {
     super(props);
@@ -24,6 +25,8 @@ class App extends Component {
       <Route exact path="/" component={() => <HomePage {...this.passFnsToChild()} />} />
         <Route exact path="/products" component={() => <ProductList {...this.passFnsToChild()} />} />
         <Route exact path="/products/:id" component={() => <ProductPage {...this.passFnsToChild()} content={ProdElem} />} />
+        <Route exact path="/database" component={() => <ProductPage {...this.passFnsToChild()} content={DBList} />} />
+        <Route exact path="/database/:id" component={() => <ProductPage {...this.passFnsToChild()} content={ProdElem} />} />
         <Route path="/about" component={() => <div>about</div>} />
         <Route path="/topics" component={() => <div>topics</div>} />
       </Router>
